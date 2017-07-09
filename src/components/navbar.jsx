@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
 
   toggleMenuActive() {
     this.setState({
-      menuActive: !this.state.menuActive
+      menuActive: !this.state.menuActive,
     });
   }
 
@@ -27,9 +27,9 @@ export default class Navbar extends React.Component {
               PoE Tools
             </a>
             <div className="navbar-burger" onClick={this.toggleMenuActive}>
-              <span></span>
-              <span></span>
-              <span></span>
+              <span />
+              <span />
+              <span />
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Navbar from "../components/navbar";
 
 export default class Application extends React.Component {
@@ -15,3 +16,7 @@ export default class Application extends React.Component {
   }
 
 }
+
+Application.propTypes = {
+  children: PropTypes.node,
+};
