@@ -19,6 +19,9 @@ const webpackConfig = {
     path: paths.build,
     filename: "index.js",
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",

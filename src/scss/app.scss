@@ -1,1 +1,14 @@
-@import "~bulma/bulma.sass"
+@import "~bulma/bulma.sass";
+
+.page-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+body {
+  background-color: #EEEEEE;
+}
+
+.app-body {
+  height: 100vh;
+}
