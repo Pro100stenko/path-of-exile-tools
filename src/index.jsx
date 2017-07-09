@@ -7,8 +7,14 @@ ReactDOM.render(
   (
     <Application>
       <div>
-        <h1 className="title is-3">Oh snap, we're Reacting!</h1>
-        <h4 className="subtitle is-5">Now with styles!</h4>
+        <section className="hero is-primary">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title is-3">Oh snap, we're Reacting!</h1>
+              <h4 className="subtitle is-5">Now with styles!</h4>
+            </div>
+          </div>
+        </section>
       </div>
     </Application>
   ),

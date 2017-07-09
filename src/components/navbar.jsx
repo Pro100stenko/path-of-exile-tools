@@ -19,28 +19,30 @@ export default class Navbar extends React.Component {
   render() {
     const { menuActive } = this.state;
     return (
-      <nav className="navbar">
+      <div className="container">
+        <nav className="navbar">
 
-        <div className="navbar-brand">
-          <a href="/" className="navbar-item page-title is-primary">
-            PoE Tools
-          </a>
-          <div className="navbar-burger" onClick={this.toggleMenuActive}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div className={`navbar-menu ${menuActive ? "is-active" : null}`}>
-          <div className="navbar-start">
-            <a className="navbar-item" href="/">
-              Nav Item
+          <div className="navbar-brand">
+            <a href="/" className="navbar-item page-title is-primary">
+              PoE Tools
             </a>
+            <div className="navbar-burger" onClick={this.toggleMenuActive}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-        </div>
 
-      </nav>
+          <div className={`navbar-menu ${menuActive ? "is-active" : null}`}>
+            <div className="navbar-start">
+              <a className="navbar-item" href="/">
+                Nav Item
+              </a>
+            </div>
+          </div>
+
+        </nav>
+      </div>
     );
   }
 

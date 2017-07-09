@@ -7,7 +7,7 @@ export default class Application extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="app-body container">
+        <div>
           {this.props.children}
         </div>
       </div>
