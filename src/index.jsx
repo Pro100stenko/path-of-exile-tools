@@ -3,14 +3,9 @@ import ReactDOM from "react-dom";
 
 ReactDOM.render(
   (
-    <div>
-      <h1>Oh snap, we're Reacting!</h1>
-      <h4>Now with styles!</h4>
-      <div className="flex-row">
-        {
-          [1, 2, 3, 4, 5].map((number) => <div className="demo-item">{number}</div>)
-        }
-      </div>
+    <div className="container">
+      <h1 className="title is-1">Oh snap, we're Reacting!</h1>
+      <h4 className="subtitle">Now with styles!</h4>
     </div>
   ),
   document.getElementById("app"),
