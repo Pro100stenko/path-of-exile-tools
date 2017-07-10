@@ -3,8 +3,6 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const supportedBrowsers = require("./browsers");
 
-console.log(supportedBrowsers);
-
 const paths = {
   src: path.join(__dirname, "/src"),
   build: path.join(__dirname, "/build"),
@@ -30,7 +28,7 @@ const webpackConfig = {
   ],
   module: {
     rules: [
-       {
+      {
         enforce: 'pre',
         test: /\.jsx?$/,
         loader: 'eslint-loader',
@@ -69,7 +67,7 @@ const webpackConfig = {
   },
   devServer: {
     publicPath: "/",
-  }
+  },
 };
 
 module.exports = webpackConfig;

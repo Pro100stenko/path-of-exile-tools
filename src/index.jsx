@@ -1,22 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { HashRouter as Router, Route } from "react-router-dom";
 import Application from "./pages/application";
+import Home from "./pages/home";
+import Dps from "./pages/dps";
 
 ReactDOM.render(
   (
-    <Application>
-      <div>
-        <section className="hero is-primary">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title is-3">Oh snap, React!</h1>
-              <h4 className="subtitle is-5">Now with styles!</h4>
-            </div>
-          </div>
-        </section>
-      </div>
-    </Application>
+    <Router>
+      <Application>
+        <Route exact path="/" component={Home} />
+        <Route path="/dps" component={Dps} />
+      </Application>
+    </Router>
   ),
   document.getElementById("app"),
 );

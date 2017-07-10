@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends React.Component {
 
@@ -35,9 +36,7 @@ export default class Navbar extends React.Component {
 
           <div className={`navbar-menu ${menuActive ? "is-active" : null}`}>
             <div className="navbar-start">
-              <a className="navbar-item" href="/">
-                Nav Item
-              </a>
+              <Link className="navbar-item" to="/dps">DPS Calculator</Link>
             </div>
           </div>
 
