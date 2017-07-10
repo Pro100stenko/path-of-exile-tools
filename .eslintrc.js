@@ -10,5 +10,7 @@ module.exports = {
     "react/require-default-props": 0,
     "spaced-comment": 0,
     "react/no-children-prop": 0,
+    "import/prefer-default-export": 0,
+    "arrow-body-style": 0,
   }
 }
