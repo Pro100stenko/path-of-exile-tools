@@ -48,6 +48,9 @@ const webpackConfig = {
                 },
               }],
             ],
+            plugins: [
+              ["transform-object-rest-spread", { useBuiltIns: true }],
+            ],
           },
         },
       },

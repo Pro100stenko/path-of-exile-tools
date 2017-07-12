@@ -10,16 +10,8 @@
     padding: 1rem 1.5rem;
 }
 
-$sizes: (0,0.5,1,2,3);
-$positions: ('top','left','bottom','right', '');
-
-@each $position in $positions {
-  @each $size in $sizes {
-    .m-#{$position}-#{$size} {
-      margin: $size + rem;
-    }
-    .p-#{$position}-#{$size} {
-      padding: $size + rem;
-    }
-  }
+.code {
+  white-space: pre;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }

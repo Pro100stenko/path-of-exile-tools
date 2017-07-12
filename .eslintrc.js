@@ -12,5 +12,7 @@ module.exports = {
     "react/no-children-prop": 0,
     "import/prefer-default-export": 0,
     "arrow-body-style": 0,
+    "no-console": 0,
+    "radix": 0,
   }
 }

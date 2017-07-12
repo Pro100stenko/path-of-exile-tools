@@ -28,7 +28,12 @@ export default class Dps extends React.Component {
     if (error) {
       return <div className="notification is-danger">{error}</div>;
     }
-    return <div>Iteminfo</div>;
+    return (
+      <div>
+        <div className="subtitle">Weapon DPS</div>
+        <code className="code">{JSON.stringify(itemInfo, null, '  ')}</code>
+      </div>
+    );
   }
 
   render() {
@@ -40,10 +45,11 @@ export default class Dps extends React.Component {
           <div className="container">
             <div className="columns box">
               <div className="column is-half">
+                <div className="subtitle">Paste Item Information</div>
                 <textarea
                   name="iteminfoText"
                   className="textarea"
-                  rows="10"
+                  rows="30"
                   value={iteminfoText}
                   onChange={e => this.changeItemInfoText(e.target.value)}
                 />
@@ -52,7 +58,7 @@ export default class Dps extends React.Component {
                     className="button is-primary mt2 is-pulled-right"
                     onClick={() => this.changeItemInfoText(exampleSword)}
                   >
-                    Set Example Text
+                    Example Item
                   </button>
                   <button
                     className="button is-warning mt2 mr2 is-pulled-right"
@@ -63,7 +69,6 @@ export default class Dps extends React.Component {
                 </p>
               </div>
               <div className="column is-half">
-                <div className="subtitle">Item Info</div>
                 {this.renderItemInfo()}
               </div>
             </div>
