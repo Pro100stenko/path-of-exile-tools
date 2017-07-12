@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/hero";
-import { parseInputText, exampleSword } from "../poe/dps";
+import { parseInputText, exampleSword, exampleSwordTwo, lioneyesGlare, rareArmor } from "../poe/dps";
 
 export default class Dps extends React.Component {
 
@@ -28,10 +28,16 @@ export default class Dps extends React.Component {
     if (error) {
       return <div className="notification is-danger">{error}</div>;
     }
+    const phys = itemInfo.overallStats.physicalDps;
+    const ele = itemInfo.overallStats.elementalDps;
+    const total = (phys && ele) ? phys + ele : 0;
     return (
       <div>
         <div className="subtitle">Weapon DPS</div>
-        <code className="code">{JSON.stringify(itemInfo, null, '  ')}</code>
+        {!phys || <p>Physical DPS: <b>{phys}</b></p>}
+        {!ele || <p>Elemental DPS: <b>{ele}</b></p>}
+        {!total || <p>Total DPS: <b>{total}</b></p>}
+        {/* <code className="code">{JSON.stringify(itemInfo, null, '  ')}</code> */}
       </div>
     );
   }
@@ -53,20 +59,44 @@ export default class Dps extends React.Component {
                   value={iteminfoText}
                   onChange={e => this.changeItemInfoText(e.target.value)}
                 />
-                <p>
-                  <button
-                    className="button is-primary mt2 is-pulled-right"
-                    onClick={() => this.changeItemInfoText(exampleSword)}
-                  >
-                    Example Item
-                  </button>
+                <div className="is-clearfix">
                   <button
                     className="button is-warning mt2 mr2 is-pulled-right"
                     onClick={() => this.changeItemInfoText("")}
                   >
                     Clear
                   </button>
-                </p>
+                </div>
+                <hr />
+                <div className="subtitle">Example Items</div>
+                <div className="columns">
+                  <div className="column">
+                    <button
+                      className="button is-primary mt2 mr2"
+                      onClick={() => this.changeItemInfoText(exampleSword)}
+                    >
+                      Example Sword One
+                    </button>
+                    <button
+                      className="button is-primary mt2 mr2"
+                      onClick={() => this.changeItemInfoText(exampleSwordTwo)}
+                    >
+                      Example Sword Two
+                    </button>
+                    <button
+                      className="button is-primary mt2 mr2"
+                      onClick={() => this.changeItemInfoText(lioneyesGlare)}
+                    >
+                      {"Lioneye's Glare"}
+                    </button>
+                    <button
+                      className="button is-primary mt2 mr2"
+                      onClick={() => this.changeItemInfoText(rareArmor)}
+                    >
+                      Rare Armor
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="column is-half">
                 {this.renderItemInfo()}

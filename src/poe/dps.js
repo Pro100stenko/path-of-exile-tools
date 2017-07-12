@@ -147,7 +147,7 @@ export const parseInputText = (input) => {
   }
   try {
     const parts = input.split("--------");
-    if (parts.length !== 7) {
+    if (parts.length < 7) {
       return { error: "Cannot parse item data" };
     }
     const [
@@ -159,6 +159,10 @@ export const parseInputText = (input) => {
       implicitModifiers,
       explicitModifiers,
     ] = parts.map(part => part.split("\n").filter(x => x.trim() !== ""));
+    let flavorText = [];
+    if (parts.length === 8) {
+      flavorText = parts[7].split("\n").filter(x => x.trim() !== "");
+    }
     return {
       title: parseTitle(title),
       overallStats: parseOverallStats(overallStats),
@@ -167,6 +171,7 @@ export const parseInputText = (input) => {
       itemLevel: parseItemLevel(itemLevel),
       implicitModifiers: parseImpicitModifiers(implicitModifiers),
       explicitModifiers: parseExplicitModifiers(explicitModifiers),
+      flavorText,
     };
   } catch (e) {
     console.error(e);
@@ -204,3 +209,83 @@ Adds 6 to 133 Lightning Damage
 +34% to Cold Resistance
 Adds 12 to 21 Physical Damage
 `;
+
+export const lioneyesGlare = `Rarity: Unique
+Lioneye's Glare
+Imperial Bow
+--------
+Bow
+Quality: +20% (augmented)
+Physical Damage: 74-279 (augmented)
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.62 (augmented)
+--------
+Requirements:
+Level: 66
+Str: 66
+Dex: 212
+Int: 62
+--------
+Sockets: R-G-G-G G
+--------
+Item Level: 71
+--------
+22% increased Elemental Damage with Attack Skills
+--------
+154% increased Physical Damage
+Adds 8 to 24 Physical Damage
+12% increased Attack Speed
++94 to maximum Mana
+Hits can't be Evaded
+Far Shot
+--------
+"See without doubt, slay without hesitation."
+- Marceus Lioneye of Sarn`;
+
+export const exampleSwordTwo = `Rarity: Rare
+Woe Skewer
+Battle Sword
+--------
+One Handed Sword
+Physical Damage: 58-107 (augmented)
+Elemental Damage: 2-28 (augmented)
+Critical Strike Chance: 5.00%
+Attacks per Second: 1.20
+Weapon Range: 9
+--------
+Requirements:
+Level: 44
+Str: 83
+Dex: 70
+--------
+Sockets: R-R
+--------
+Item Level: 47
+--------
+40% increased Accuracy Rating
+--------
+53% increased Physical Damage
+Adds 2 to 28 Lightning Damage
++19% to Fire Resistance
++35 to Accuracy Rating`;
+
+export const rareArmor = `Rarity: Rare
+Loath Shell
+Frontier Leather
+--------
+Evasion Rating: 523 (augmented)
+--------
+Requirements:
+Level: 41
+Dex: 114
+--------
+Sockets: G-R-G
+--------
+Item Level: 42
+--------
++26 to Dexterity
++17 to Evasion Rating
+22% increased Evasion Rating
++70 to maximum Life
++18% to Lightning Resistance
+11% increased Stun and Block Recovery`;
