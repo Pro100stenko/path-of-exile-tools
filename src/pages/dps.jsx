@@ -28,15 +28,13 @@ export default class Dps extends React.Component {
     if (error) {
       return <div className="notification is-danger">{error}</div>;
     }
-    const phys = itemInfo.overallStats.physicalDps;
-    const ele = itemInfo.overallStats.elementalDps;
-    const total = (phys && ele) ? phys + ele : 0;
+    const { physicalDps, elementalDps, totalDps } = itemInfo.overallStats;
     return (
       <div>
         <div className="subtitle">Weapon DPS</div>
-        {!phys || <p>Physical DPS: <b>{phys}</b></p>}
-        {!ele || <p>Elemental DPS: <b>{ele}</b></p>}
-        {!total || <p>Total DPS: <b>{total}</b></p>}
+        {!physicalDps || <p>Physical DPS: <b>{physicalDps}</b></p>}
+        {!elementalDps || <p>Elemental DPS: <b>{elementalDps}</b></p>}
+        {!totalDps || <p>Total DPS: <b>{totalDps}</b></p>}
         {/* <code className="code">{JSON.stringify(itemInfo, null, '  ')}</code> */}
       </div>
     );

@@ -5,7 +5,7 @@ export default class Hero extends React.Component {
 
   render() {
     const { title, description } = this.props;
-    const descriptionElem = description ? <h4 className="subtitle is-5">Utilities</h4> : null;
+    const descriptionElem = description ? <h4 className="subtitle is-5">{description}</h4> : null;
     return (
       <div>
         <section className="hero is-primary">

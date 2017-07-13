@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "react",
+    ["env", {"modules": false}]
+  ],
+  "plugins": [
+    ["transform-object-rest-spread", { "useBuiltIns": true }]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}

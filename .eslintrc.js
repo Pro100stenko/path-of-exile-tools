@@ -2,7 +2,11 @@ module.exports = {
   extends: "airbnb",
   env: {
     browser: true,
+    jest: true,
   },
+  plugins: [
+    "jest"
+  ],
   rules: {
     "quotes": 0,
     "jsx-a11y/no-static-element-interactions": 0,

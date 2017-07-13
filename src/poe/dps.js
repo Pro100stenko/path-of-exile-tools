@@ -50,6 +50,7 @@ function parseOverallStats(stats) {
     weaponType: stats[0],
     physicalDps,
     elementalDps,
+    totalDps: physicalDps + elementalDps,
     stats: stats.slice(1, stats.length),
   };
 }

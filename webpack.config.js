@@ -8,6 +8,7 @@ const paths = {
   build: path.join(__dirname, "/build"),
 }
 const webpackConfig = {
+  context: process.cwd(),
   entry: [
     "babel-polyfill",
     path.join(paths.src, "index.jsx"),
@@ -40,6 +41,7 @@ const webpackConfig = {
         use: {
           loader: "babel-loader",
           options: {
+            babelrc: false,
             presets: [
               "react",
               ["env", {
