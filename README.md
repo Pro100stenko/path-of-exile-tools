@@ -6,5 +6,3 @@ Path of Exile Tools
 * Installation: `yarn`
 * Development: `yarn start`
 * Production build: `yarn build`
-
-## Hooks
