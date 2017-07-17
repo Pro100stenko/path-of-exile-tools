@@ -24,7 +24,7 @@ export default class Navbar extends React.Component {
         <nav className="navbar">
 
           <div className="navbar-brand">
-            <a href="/" className="navbar-item page-title is-primary">
+            <a href="#/" className="navbar-item page-title is-primary">
               PoE Tools
             </a>
             <div className="navbar-burger" onClick={this.toggleMenuActive}>
