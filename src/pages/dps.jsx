@@ -29,6 +29,9 @@ export default class Dps extends React.Component {
       return <div className="notification is-danger">{error}</div>;
     }
     const { physicalDps, elementalDps, totalDps } = itemInfo.overallStats;
+    if (!totalDps) {
+      return <div className="notification is-warning">Could not parse dps</div>;
+    }
     return (
       <div>
         <div className="subtitle">Weapon DPS</div>
@@ -59,7 +62,7 @@ export default class Dps extends React.Component {
                 />
                 <div className="is-clearfix">
                   <button
-                    className="button is-warning mt2 mr2 is-pulled-right"
+                    className="button is-primary mt2 mr2 is-pulled-right"
                     onClick={() => this.changeItemInfoText("")}
                   >
                     Clear
