@@ -148,9 +148,6 @@ export const parseInputText = (input) => {
   }
   try {
     const parts = input.split("--------");
-    if (parts.length < 7) {
-      return { error: "Cannot parse item data" };
-    }
     const [
       title,
       overallStats,
